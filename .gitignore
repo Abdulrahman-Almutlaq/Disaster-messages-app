@@ -1,0 +1,5 @@
+data/DisasterResponse.db
+models/best_model.pkl
+data/categories.csv
+data/messages.csv
+.ipynb_checkpoints
