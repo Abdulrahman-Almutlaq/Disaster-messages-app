@@ -8,8 +8,6 @@
 
 3. The `model` folder, where the best saved model exists in a pickle format, and the script used to train the model, which is based on the `ML Pipeline Preparation.ipynb` notebook.
 
-- In order to start up the application you need to follow the following steps:
-
 ### Quickstart:
 
 1. Clone this repository.
