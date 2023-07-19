@@ -44,7 +44,7 @@ def load_data(database_filepath):
     X = df.message
     Y = df[(df.columns[~df.columns.isin(non_target)])]
 
-    return X,Y
+    return X,Y, Y.columns
 
 
 def tokenize(text): 
@@ -90,21 +90,21 @@ def build_model():
 
     return cv
 
-    
 
-
-# Param category_names: the notebook implementation doesn't require one so it was deleted
-def evaluate_model(model, X_test, Y_test):
+def evaluate_model(model, X_test, Y_test, category_names):
     """
     Prints a classification_report for the model passed.
 
     Param model: the model to evaluate.
     Param X_test: the features of the testing data X.
     Param Y_test: the labels of the testing data Y.
+    Param category_names: Contains the different labels.
     """
+
+    print(category_names," ============================")
     y_pred = model.predict(X_test)
 
-    for ind, col in enumerate(Y_test):
+    for ind, col in enumerate(category_names):
         
         print(col, ':\n', classification_report(Y_test[:, ind], y_pred[:, ind]),"\n\n")
 
@@ -126,7 +126,7 @@ def main():
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
         X, Y, category_names = load_data(database_filepath)
-        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
+        X_train, X_test, Y_train, Y_test = train_test_split(X, Y.values, test_size=0.2)
         
         print('Building model...')
         model = build_model()
