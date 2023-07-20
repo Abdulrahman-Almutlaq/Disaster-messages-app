@@ -22,7 +22,7 @@
 
 ### Quickstart (*one needs to run commands in the root Root Directory*):
 
-1. Clone this repository using: *`git clone https://github.com/Abdulrahman-Almutlaq?tab=repositories`* 
+1. Clone this repository using: *`git clone https://github.com/Abdulrahman-Almutlaq/Disaster-messages-app/tree/main`* 
 
 2. Install the packages in requirements.txt using: *`pip install -r requirements.txt`*
 
