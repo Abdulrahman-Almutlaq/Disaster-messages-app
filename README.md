@@ -27,9 +27,8 @@
 2. Install the packages in requirements.txt using: *`pip install -r requirements.txt`*
 
 3. Get the Figure-Eight data using the following commands:
-    1. *`dvc init`*
-    2. *`dvc pull`*
-    3. If it does not work, here is a tutorial on [DVC](https://www.youtube.com/watch?v=kLKBcPonMYw&ab_channel=DVCorg), if that does not work, here is the [data](https://drive.google.com/drive/u/1/folders/1f3OMLLD_Erpzb08YK2b9u1YBi9AjucYk), it should be placed under the data folder.
+    1. *`dvc pull`*
+    2. If it does not work, here is a tutorial on [DVC](https://www.youtube.com/watch?v=kLKBcPonMYw&ab_channel=DVCorg), if that does not work, here is the [data](https://drive.google.com/drive/u/1/folders/1f3OMLLD_Erpzb08YK2b9u1YBi9AjucYk), it should be placed under the data folder.
 
 4. Preprocess the data and create the database by running `process_data.py` under the `data` folder using: *`python data/process_data.py data/messages.csv data/categories.csv data/DisasterResponse.db`*
 
