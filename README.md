@@ -6,7 +6,7 @@
 - By harnessing the power of machine learning and natural language processing, we aim to enhance the resilience and well-being of communities facing adversity during crises, ensuring that assistance reaches those in urgent need, efficiently and effectively.
 
  This project structure is as follows:
-- **Disaster-messages-app**
+- **Disaster-messages-app (Root Directory)**: The main directory of the project.
     - **app (Subdirectory)**: Contains the files related to the web application.
         - **templates (Subdirectory)**: Contains the HTML templates for rendering web pages.
             - **go.html**: The HTML template for displaying the results of message classification.
@@ -20,18 +20,22 @@
     - **ML Pipeline Preparation.ipynb**: The notebook is used to complete the **train_classifier.py** file, as the original script was written in the notebook.
     - **requirements.txt**: contains all the required packages for this repository.
 
-### Quickstart:
-https://drive.google.com/drive/u/1/folders/1Mm6ZywZ81L7kViC4oU9yFgHByln5R49C
+### Quickstart (*one needs to run commands in the root Root Directory*):
 
-1. Clone this repository.
+1. Clone this repository using: *`git clone https://github.com/Abdulrahman-Almutlaq?tab=repositories`* 
 
-2. Install the packages in requirements.txt using `pip install -r requirements.txt`.
+2. Install the packages in requirements.txt using: *`pip install -r requirements.txt`*
 
-3. Run `process_data.py` under the `data` folder to preprocess the data.
+3. Get the Figure-Eight data using the following commands:
+    1. *`dvc init`*
+    2. *`dvc pull`*
+    3. If it does not work, here is a tutorial on [DVC](https://www.youtube.com/watch?v=kLKBcPonMYw&ab_channel=DVCorg), if that does not work, here is the [data](https://drive.google.com/drive/u/1/folders/1f3OMLLD_Erpzb08YK2b9u1YBi9AjucYk), it should be placed under the data folder.
 
-4. Run `train_classifier.py` under the `models` folder to build up the model.
+4. Preprocess the data and create the database by running `process_data.py` under the `data` folder using: *`python data/process_data.py data/messages.csv data/categories.csv data/DisasterResponse.db`*
 
-5. Run `run.py` under the `app` folder to build up the model.
+5. Build up the model and save it by running `train_classifier.py` under the `models` folder using: *`python models/train_classifier.py data/DisasterResponse.db models/best_model.pkl`*
 
-5. A link is displayed (with port 3000), clicking it should do it!
+6. Start up the web  application by running `run.py` under the `app` folder using: *`python app/run.py`*
+
+7. A link is displayed (with port 3000), clicking it should do it!
 

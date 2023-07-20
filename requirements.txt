@@ -6,3 +6,5 @@ pandas==1.5.3
 plotly==5.9.0
 scikit_learn==1.2.1
 SQLAlchemy==1.4.39
+dvc
+dvc-gdrive
